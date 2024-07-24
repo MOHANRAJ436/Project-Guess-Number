@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: ivory;
+        }
+        h1{
+            font-family: sans-serif;
+            text-align: center;
+            padding: 15px;
+            
+
+        }
+        input{
+            display: inline;
+            text-align: center;
+        }
+        div{
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: auto;
+            height: auto;
+        }
+        button{
+            background-color: blueviolet;
+            color: white;
+        }
+        button:hover{
+           background-color: lightcoral;
+        }
+       
+        p{
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 15px;
+            font-family: Verdana;
+            font-style: normal;
+            font-size: medium;
+        }
+    </style>
+    <h1>
+        GUESS NUMBER BETWEEN (1-10)
+    </h1>
+    <div>
+    <input id="inputbox">
+    <button onclick="check()">
+        CHECK
+    </button>
+    </div>
+    <p id="result">
+        Result
+    </p>
+    <p id="score">
+        SCORE:10
+    </p>
+    <script>
+
+        var box = document.getElementById("inputbox")
+        var result= document.getElementById("result")
+        var score= document.getElementById("score")
+        var random = Math.floor(Math.random()*10)+1
+        console.log(random)
+        var totalscore = 10
+        function check(){
+            var boxvalue = Number(box.value)
+            if(random == boxvalue){
+                result.textContent = "RIGHT"
+                console.log("Right")
+                
+                alert("YOU WON.....")
+            }else{
+                totalscore = totalscore - 1
+                score.textContent = "Score : "+ totalscore
+                console.log("Wrong")
+                result.textContent = "WRONG"
+            }
+
+        }
+    </script>
+</body>
+</html>
